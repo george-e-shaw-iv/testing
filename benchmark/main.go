@@ -10,7 +10,7 @@ import (
 
 var counter uint32
 
-func BenchMain(f *benchmarker.Foo) {
+func BenchmarkerMain(f *benchmarker.Options) {
 	res, err := http.DefaultClient.Get(f.Addr)
 	if err != nil {
 		fmt.Println("error", err)
