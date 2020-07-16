@@ -1,6 +1,7 @@
 package benchmark
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/getoutreach/benchmarker/lib/benchmarker"
@@ -13,7 +14,7 @@ func BenchmarkerMain(f *benchmarker.Options) error {
 	}
 
 	if res.StatusCode != http.StatusNoContent {
-
+		return errors.New(http.StatusText(res.StatusCode))
 	}
 
 	return nil
